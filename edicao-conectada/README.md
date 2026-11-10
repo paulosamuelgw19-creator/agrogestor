@@ -71,6 +71,8 @@ Na versão de desenvolvimento, os perfis de demonstração podem ser abertos pel
 
 ## Instalar o servidor no PC gestor
 
+Para testar a edição Conectada em uma cópia nova no Windows, execute `Iniciar-piloto.cmd` na raiz desta edição. O iniciador habilita a API v2, usa a porta `8766` e exige um banco separado em `server/data-piloto`. Na primeira execução, ele cria a configuração local e pede o cadastro do administrador. Use uma cópia separada se já tiver um `server/.env` para outra instalação.
+
 Cada PC gestor deve ter uma pasta de dados própria para uma única fazenda. Não copie `server/data` para um repositório ou serviço público; essa pasta contém os dados operacionais e hashes de senha. Requisitos: Windows PowerShell, Python 3.11 ou superior e Tailscale instalado no PC e nos celulares autorizados.
 
 1. Abra PowerShell na pasta `server` deste projeto.

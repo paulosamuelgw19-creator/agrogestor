@@ -1,6 +1,6 @@
 # AgroGestor 2.0.0 — homologação
 
-> Registro histórico. Para configurar o piloto atual, siga o README da edição Conectada. Os APKs, relatórios gerados e iniciador da entrega antiga ficam fora deste repositório.
+> Registro histórico. Para configurar o piloto atual, siga o README da edição Conectada. Os APKs e relatórios gerados da entrega antiga ficam fora deste repositório.
 
 Entrega de 14/10/2026: frota, insumos, consumo, talhões e operações. **IA e n8n ficam em trabalho separado.** Esta entrega não conclui todo o plano de expansão financeira/agronômica.
 
