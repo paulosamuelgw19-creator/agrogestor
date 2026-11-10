@@ -1,0 +1,9 @@
+{
+  "grants": [
+    {
+      "src": ["group:agrogestor-users"],
+      "dst": ["tag:agrogestor-farm-pc"],
+      "ip": ["tcp:8443"]
+    }
+  ]
+}

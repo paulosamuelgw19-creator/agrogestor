@@ -1,0 +1,16 @@
+# Modelo opcional de HTTPS externo no Windows. Nao esta implantado.
+# Defina AGRO_LOCAL_PUBLIC_HOST com um dominio que voce controla.
+# DNS e portas 80/443 devem chegar a este Windows; CGNAT exige outra solucao.
+{$AGRO_LOCAL_PUBLIC_HOST} {
+    request_body {
+        max_size 8KB
+    }
+    @activation path /activation/v1/*
+    handle @activation {
+        reverse_proxy 127.0.0.1:8790
+    }
+    # Painel, login e APIs administrativas nunca sao publicados por este modelo.
+    handle {
+        respond "Not found" 404
+    }
+}

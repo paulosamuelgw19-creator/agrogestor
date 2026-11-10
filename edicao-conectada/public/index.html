@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>AgroGestor · Administração de licenças</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand-mark">AG</div>
+        <div>
+          <h1>AgroGestor</h1>
+          <p>Painel privado do desenvolvedor · fazendas e licenças</p>
+        </div>
+      </header>
+      <section id="setupNotice" class="notice hidden">
+        A configuração Firebase ainda não foi adicionada. Copie <code>firebase-config.example.json</code> para <code>firebase-config.json</code> e preencha os dados públicos do projeto.
+      </section>
+      <section id="loginPanel" class="panel">
+        <h2>Acesso do desenvolvedor</h2>
+        <p>Este painel é separado do aplicativo das fazendas. Somente seu e-mail verificado e autorizado poderá consultar fazendas e administrar licenças.</p>
+        <form id="loginForm">
+          <label>E-mail<input id="email" type="email" autocomplete="username" required></label>
+          <label>Senha<input id="password" type="password" autocomplete="current-password" required></label>
+          <button type="submit">Entrar</button>
+        </form>
+      </section>
+      <div id="message" role="status" class="message hidden"></div>
+      <section id="adminPanel" class="hidden">
+        <div class="toolbar panel">
+          <div><strong id="signedInEmail"></strong><div class="muted">Controle períodos, suspensão e renovação por fazenda</div></div>
+          <div class="actions"><label class="plan-picker" for="issuePlan">Plano<select id="issuePlan"><option value="monthly">30 dias</option><option value="quarterly">90 dias</option><option value="annual">365 dias</option><option value="lifetime">Vitalícia</option></select></label><button id="issueButton">Emitir licença</button><button id="refreshButton" class="secondary">Atualizar</button><button id="signOutButton" class="secondary">Sair</button></div>
+        </div>
+        <div id="issuedKey" class="key-card hidden"></div>
+        <div class="panel table-wrap">
+          <h2>Fazendas conectadas</h2>
+          <p class="muted section-help">Mostra as fazendas que já validaram o teste ou ativaram uma licença. Confirme o pagamento antes de liberar ou renovar. Os dados operacionais e as contas permanecem no servidor de cada fazenda.</p>
+          <table>
+            <thead><tr><th>Fazenda</th><th>ID</th><th>Acesso</th><th>Validade</th><th>Último contato</th></tr></thead>
+            <tbody id="farmRows"><tr><td colspan="5">Entre para carregar.</td></tr></tbody>
+          </table>
+        </div>
+        <div class="panel table-wrap">
+          <h2>Licenças</h2>
+          <table>
+            <thead><tr><th>Estado</th><th>Licença</th><th>Fazenda vinculada</th><th>Emitida / ativada</th><th>Ações</th></tr></thead>
+            <tbody id="licenseRows"><tr><td colspan="5">Entre para carregar.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <footer>Os códigos aparecem uma única vez ao emitir. Guarde-os com segurança e confirme o pagamento antes da emissão.</footer>
+    </main>
+    <script type="module" src="/admin.mjs"></script>
+  </body>
+</html>
