@@ -1,0 +1,6 @@
+# Copie para android/key.properties e preencha com sua chave de distribuição.
+# Use barras normais no caminho. Guarde uma cópia protegida da chave e das senhas.
+storeFile=C:/CAMINHO/PRIVADO/agrogestor-release.jks
+storePassword=PREENCHER_LOCALMENTE
+keyAlias=agrogestor
+keyPassword=PREENCHER_LOCALMENTE

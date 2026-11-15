@@ -1,0 +1,26 @@
+gradle.projectsEvaluated {
+ def app = gradle.rootProject.findProject(':app')
+ if(app==null)return
+ app.tasks.register('diagnoseLocalRuntime') {
+  doLast {
+   def config=app.configurations.getByName('debugRuntimeClasspath')
+   def visit
+   visit={ Throwable t,int depth ->
+    if(depth>12)return
+    println('  '*depth+'ERROR_CLASS '+t.class.name)
+    try { println('  '*depth+'ERROR_TEXT '+t.message) } catch(Throwable ignored) {}
+    t.stackTrace.take(3).each {println('  '*depth+'AT '+it)}
+    if(t instanceof org.gradle.internal.exceptions.MultiCauseException) {
+     t.causes.each {visit(it,depth+1)}
+    } else if(t.cause!=null && t.cause!=t) visit(t.cause,depth+1)
+   }
+   config.incoming.resolutionResult.allDependencies.each {dep ->
+    if(dep instanceof org.gradle.api.artifacts.result.UnresolvedDependencyResult) {
+     println('UNRESOLVED_COORD '+dep.requested.displayName)
+     visit(dep.failure,0)
+    }
+   }
+   config.incoming.artifactView {lenient=true}.artifacts.failures.each { visit(it,0) }
+  }
+ }
+}

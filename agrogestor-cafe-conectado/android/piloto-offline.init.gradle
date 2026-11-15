@@ -1,0 +1,17 @@
+beforeSettings { settings ->
+ settings.pluginManagement.repositories { maven { url = uri(new File(gradle.startParameter.currentDir.parentFile, "compilacao-maven")) }; mavenCentral(); google(); gradlePluginPortal() }
+}
+settingsEvaluated { settings -> settings.dependencyResolutionManagement.repositories { maven { url = uri(new File(gradle.startParameter.currentDir.parentFile, "compilacao-maven")) } } }
+beforeProject { project ->
+ project.buildscript.repositories.maven { url = uri(new File(gradle.startParameter.currentDir.parentFile, "compilacao-maven")) }
+ if (project.rootProject.projectDir == gradle.startParameter.currentDir) {
+  project.repositories.maven { url = uri(new File(gradle.startParameter.currentDir.parentFile, "compilacao-maven")) }
+  // Reuse the toolchain already selected by the application, only for native plugin build scripts.
+  project.buildscript.configurations.configureEach { cfg ->
+   cfg.resolutionStrategy.eachDependency { d ->
+    if (d.requested.group == 'com.android.tools.build' && d.requested.name == 'gradle') d.useVersion('8.11.1')
+    if (d.requested.group == 'org.jetbrains.kotlin' && d.requested.name == 'kotlin-gradle-plugin') d.useVersion('2.2.20')
+   }
+  }
+ }
+}

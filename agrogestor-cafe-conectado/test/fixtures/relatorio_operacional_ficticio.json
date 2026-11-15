@@ -1,0 +1,269 @@
+{
+  "warning": "DADOS INTEIRAMENTE FICTICIOS - banco temporario de teste",
+  "report": {
+    "generated_at": "2026-10-14T15:25:43+00:00",
+    "property": {
+      "tenant_id": "org-a",
+      "id": "011255ea-9765-4802-9fc4-a418468baecb",
+      "client_id": "566d3d4d-b7b7-49ae-8395-33a07376cf76",
+      "name": "Fazenda fictícia",
+      "area_ha": "10",
+      "created_at": "2026-10-14T15:25:42+00:00"
+    },
+    "plot": {
+      "tenant_id": "org-a",
+      "id": "ebd0cdd3-cc84-43fb-961b-b9f1b9c17e77",
+      "property_id": "011255ea-9765-4802-9fc4-a418468baecb",
+      "name": "Talhão fictício",
+      "area_ha": "10",
+      "created_at": "2026-10-14T15:25:42+00:00"
+    },
+    "crop": {
+      "tenant_id": "org-a",
+      "id": "fc0d168c-f5bc-41ce-bed0-25c8d87f1d92",
+      "name": "Café",
+      "kind": "coffee"
+    },
+    "cycle": {
+      "tenant_id": "org-a",
+      "id": "1b6a6cea-780a-4acd-b3bb-77767a688fec",
+      "plot_id": "ebd0cdd3-cc84-43fb-961b-b9f1b9c17e77",
+      "crop_id": "fc0d168c-f5bc-41ce-bed0-25c8d87f1d92",
+      "name": "Safra fictícia 2026",
+      "area_ha": "10",
+      "starts_on": "2026-01-01",
+      "ends_on": "2026-12-31"
+    },
+    "filters": {
+      "starts_on": null,
+      "ends_on": null
+    },
+    "scope": "Somente custos registrados de máquinas (sem combustível e mão de obra na tarifa) e insumos. Não representa custo total da cultura.",
+    "metrics": {
+      "registered_cost": {
+        "status": "complete_registered",
+        "value": "137400",
+        "known_subtotal": "137400",
+        "unit": "BRL_cent",
+        "records": 5,
+        "missing": 0
+      },
+      "machine_cost": {
+        "status": "complete_registered",
+        "value": "84000",
+        "known_subtotal": "84000",
+        "unit": "BRL_cent",
+        "records": 2,
+        "missing": 0
+      },
+      "input_cost": {
+        "status": "complete_registered",
+        "value": "53400",
+        "known_subtotal": "53400",
+        "unit": "BRL_cent",
+        "records": 3,
+        "missing": 0
+      },
+      "cost_per_cycle_ha": {
+        "status": "complete_registered",
+        "value": "13740",
+        "unit": "BRL_cent/ha"
+      },
+      "worked_area_passes": {
+        "status": "complete_registered",
+        "value": "20",
+        "known_subtotal": "20",
+        "unit": "ha_passes",
+        "records": 2,
+        "missing": 0
+      },
+      "machine_hours": {
+        "status": "complete_registered",
+        "value": "7",
+        "known_subtotal": "7",
+        "unit": "h",
+        "records": 2,
+        "missing": 0
+      },
+      "labor_hours": {
+        "status": "incomplete",
+        "value": null,
+        "known_subtotal": null,
+        "unit": "h",
+        "records": 2,
+        "missing": 2
+      }
+    },
+    "machines": [
+      {
+        "machine_id": "eda412f2-eb42-4b18-a2ab-48bd49a6680b",
+        "hours": {
+          "status": "complete_registered",
+          "value": "7",
+          "known_subtotal": "7",
+          "unit": "h",
+          "records": 2,
+          "missing": 0
+        },
+        "cost": {
+          "status": "complete_registered",
+          "value": "84000",
+          "known_subtotal": "84000",
+          "unit": "BRL_cent",
+          "records": 2,
+          "missing": 0
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "input_id": "0dbc392e-547c-4124-84fe-fc57e09eb97a",
+        "unit": "L",
+        "quantity": {
+          "status": "complete_registered",
+          "value": "70",
+          "known_subtotal": "70",
+          "unit": "L",
+          "records": 2,
+          "missing": 0
+        },
+        "cost": {
+          "status": "complete_registered",
+          "value": "43400",
+          "known_subtotal": "43400",
+          "unit": "BRL_cent",
+          "records": 2,
+          "missing": 0
+        }
+      },
+      {
+        "input_id": "8d2f475b-9f38-45b8-9735-b2e4d2d0a269",
+        "unit": "L",
+        "quantity": {
+          "status": "complete_registered",
+          "value": "2",
+          "known_subtotal": "2",
+          "unit": "L",
+          "records": 1,
+          "missing": 0
+        },
+        "cost": {
+          "status": "complete_registered",
+          "value": "10000",
+          "known_subtotal": "10000",
+          "unit": "BRL_cent",
+          "records": 1,
+          "missing": 0
+        }
+      }
+    ],
+    "operations": [
+      {
+        "tenant_id": "org-a",
+        "id": "c117bd0b-ea3a-4c80-a4d8-41a741712e8f",
+        "cycle_id": "1b6a6cea-780a-4acd-b3bb-77767a688fec",
+        "kind": "application",
+        "performed_on": "2026-01-03",
+        "area_ha": "10",
+        "notes": "",
+        "labor_hours": null,
+        "actor_id": "admin",
+        "created_at": "2026-10-14T15:25:43+00:00",
+        "void": null,
+        "machines": [
+          {
+            "tenant_id": "org-a",
+            "operation_id": "c117bd0b-ea3a-4c80-a4d8-41a741712e8f",
+            "machine_id": "eda412f2-eb42-4b18-a2ab-48bd49a6680b",
+            "start_meter": "100",
+            "end_meter": "103",
+            "hours": "3",
+            "meter_gap_hours": "0",
+            "hourly_cost_cents": 12000,
+            "cost_cents": 36000,
+            "name": "Trator fictício"
+          }
+        ],
+        "inputs": [
+          {
+            "seq": 4,
+            "tenant_id": "org-a",
+            "id": "3ec1d6a4-7c4e-5fe6-a80a-408f26c79d0f",
+            "property_id": "011255ea-9765-4802-9fc4-a418468baecb",
+            "input_id": "0dbc392e-547c-4124-84fe-fc57e09eb97a",
+            "operation_id": "c117bd0b-ea3a-4c80-a4d8-41a741712e8f",
+            "kind": "consume",
+            "quantity": "30",
+            "value_cents": 18600,
+            "actor_id": "admin",
+            "occurred_on": "2026-01-03",
+            "created_at": "2026-10-14T15:25:43+00:00",
+            "unit": "L",
+            "name": "Diesel"
+          },
+          {
+            "seq": 5,
+            "tenant_id": "org-a",
+            "id": "77e47ec6-8fea-54bd-86a1-d2864c047624",
+            "property_id": "011255ea-9765-4802-9fc4-a418468baecb",
+            "input_id": "8d2f475b-9f38-45b8-9735-b2e4d2d0a269",
+            "operation_id": "c117bd0b-ea3a-4c80-a4d8-41a741712e8f",
+            "kind": "consume",
+            "quantity": "2",
+            "value_cents": 10000,
+            "actor_id": "admin",
+            "occurred_on": "2026-01-03",
+            "created_at": "2026-10-14T15:25:43+00:00",
+            "unit": "L",
+            "name": "Foliar"
+          }
+        ]
+      },
+      {
+        "tenant_id": "org-a",
+        "id": "cafdd37f-2990-45c5-94f6-8f8b30e72da2",
+        "cycle_id": "1b6a6cea-780a-4acd-b3bb-77767a688fec",
+        "kind": "application",
+        "performed_on": "2026-01-04",
+        "area_ha": "10",
+        "notes": "",
+        "labor_hours": null,
+        "actor_id": "admin",
+        "created_at": "2026-10-14T15:25:43+00:00",
+        "void": null,
+        "machines": [
+          {
+            "tenant_id": "org-a",
+            "operation_id": "cafdd37f-2990-45c5-94f6-8f8b30e72da2",
+            "machine_id": "eda412f2-eb42-4b18-a2ab-48bd49a6680b",
+            "start_meter": "103",
+            "end_meter": "107",
+            "hours": "4",
+            "meter_gap_hours": "0",
+            "hourly_cost_cents": 12000,
+            "cost_cents": 48000,
+            "name": "Trator fictício"
+          }
+        ],
+        "inputs": [
+          {
+            "seq": 6,
+            "tenant_id": "org-a",
+            "id": "3fb78b28-2acf-5d96-aab0-479279542d48",
+            "property_id": "011255ea-9765-4802-9fc4-a418468baecb",
+            "input_id": "0dbc392e-547c-4124-84fe-fc57e09eb97a",
+            "operation_id": "cafdd37f-2990-45c5-94f6-8f8b30e72da2",
+            "kind": "consume",
+            "quantity": "40",
+            "value_cents": 24800,
+            "actor_id": "admin",
+            "occurred_on": "2026-01-04",
+            "created_at": "2026-10-14T15:25:43+00:00",
+            "unit": "L",
+            "name": "Diesel"
+          }
+        ]
+      }
+    ]
+  }
+}
